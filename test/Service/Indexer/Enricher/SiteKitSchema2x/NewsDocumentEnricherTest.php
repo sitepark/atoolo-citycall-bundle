@@ -16,16 +16,6 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(NewsDocumentEnricher::class)]
 class NewsDocumentEnricherTest extends TestCase
 {
-    public function testIsIndexable(): void
-    {
-        $enricher = new NewsDocumentEnricher();
-        $resource = $this->createMock(Resource::class);
-        self::assertTrue(
-            $enricher->isIndexable($resource),
-            "should not mark any resource as not indexable"
-        );
-    }
-
     public function testIsAdHocActive(): void
     {
         $doc = $this->enrichDocument(
@@ -78,6 +68,7 @@ class NewsDocumentEnricherTest extends TestCase
             'test',
             'test',
             $objectType,
+            '',
             $data
         );
 
