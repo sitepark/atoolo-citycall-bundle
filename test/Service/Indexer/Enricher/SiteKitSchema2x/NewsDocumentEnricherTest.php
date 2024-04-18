@@ -6,7 +6,7 @@ namespace Atoolo\CityCall\Test\Service\Indexer\Enricher\SiteKitSchema2x;
 
 // phpcs:ignore
 use Atoolo\CityCall\Service\Indexer\Enricher\SiteKitSchema2x\NewsDocumentEnricher;
-use Atoolo\Resource\Resource;
+use Atoolo\CityCall\Test\TestResourceFactory;
 use Atoolo\Search\Service\Indexer\IndexSchema2xDocument;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -18,14 +18,12 @@ class NewsDocumentEnricherTest extends TestCase
 {
     public function testIsAdHocActive(): void
     {
-        $doc = $this->enrichDocument(
-            'citycall-news',
-            [
-                'metadata' => [
-                    'isAdHocActive' => true
-                ]
+        $doc = $this->enrichDocument([
+            'objectType' => 'citycall-news',
+            'metadata' => [
+               'isAdHocActive' => true
             ]
-        );
+        ]);
 
         /** @var array{sp_meta_string_leikanumber: bool} $fields */
         $fields = $doc->getFields();
@@ -38,14 +36,12 @@ class NewsDocumentEnricherTest extends TestCase
 
     public function testWithNonNewsObjectType(): void
     {
-        $doc = $this->enrichDocument(
-            'otherType',
-            [
-                'metadata' => [
-                    'isAdHocActive' => true
-                ]
+        $doc = $this->enrichDocument([
+            'objectType' => 'otherType',
+            'metadata' => [
+                'isAdHocActive' => true
             ]
-        );
+        ]);
 
         /** @var array{sp_meta_string_leikanumber: bool} $fields */
         $fields = $doc->getFields();
@@ -57,20 +53,12 @@ class NewsDocumentEnricherTest extends TestCase
     }
 
     private function enrichDocument(
-        string $objectType,
         array $data
     ): IndexSchema2xDocument {
         $enricher = new NewsDocumentEnricher();
         $doc = new IndexSchema2xDocument();
 
-        $resource = new Resource(
-            'test',
-            'test',
-            'test',
-            $objectType,
-            '',
-            $data
-        );
+        $resource = TestResourceFactory::create($data);
 
         return $enricher->enrichDocument($resource, $doc, '');
     }

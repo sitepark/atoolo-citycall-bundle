@@ -24,7 +24,7 @@ class NewsDocumentEnricher implements DocumentEnricher
         string $processId
     ): IndexSchema2xDocument {
 
-        if ($resource->getObjectType() !== 'citycall-news') {
+        if ($resource->objectType !== 'citycall-news') {
             return $doc;
         }
 
@@ -41,7 +41,7 @@ class NewsDocumentEnricher implements DocumentEnricher
         IndexDocument $doc
     ): IndexDocument {
 
-        $isAdHocActive = $resource->getData()->getBool(
+        $isAdHocActive = $resource->data->getBool(
             'metadata.isAdHocActive'
         );
         if ($isAdHocActive) {
