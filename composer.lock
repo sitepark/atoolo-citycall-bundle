@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c0ffd08bbb3fe347daea397b0beda71",
+    "content-hash": "41de86bf03f09c6b0a7a76662ab35771",
     "packages": [
         {
             "name": "atoolo/resource-bundle",
@@ -65,7 +65,7 @@
             "time": "2024-05-22T13:06:17+00:00"
         },
         {
-            "name": "atoolo/search",
+            "name": "atoolo/search-bundle",
             "version": "dev-main",
             "source": {
                 "type": "git",
@@ -130,7 +130,6 @@
                 "issues": "https://github.com/sitepark/atoolo-search-bundle/issues",
                 "source": "https://github.com/sitepark/atoolo-search-bundle/tree/main"
             },
-            "abandoned": "atoolo/search-bundle",
             "time": "2024-05-23T06:04:20+00:00"
         },
         {
@@ -6419,7 +6418,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "atoolo/search": 20,
+        "atoolo/search-bundle": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
