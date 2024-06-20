@@ -15,6 +15,10 @@ use Atoolo\Search\Service\Indexer\IndexSchema2xDocument;
  */
 class NewsDocumentEnricher implements DocumentEnricher
 {
+    public function cleanup(): void
+    {
+    }
+
     /**
      * @throws DocumentEnrichingException
      */
