@@ -8,4 +8,4 @@
 
 CityCall is a software solution developed specifically for municipal service centers to enable employees to quickly and efficiently research and provide information for citizen inquiries. This platform serves as a central point of contact for telephone enquiries by optimizing access to complete and up-to-date information. By improving the provision of information, CityCall helps to speed up service for citizens and make the work of service center staff easier.
 
-This bundle provides the functional scope of CityCall.
+[Documentation](https://sitepark.github.io/atoolo-docs/develop/bundles/citycall/)
