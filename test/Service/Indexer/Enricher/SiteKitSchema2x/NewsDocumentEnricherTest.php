@@ -52,6 +52,13 @@ class NewsDocumentEnricherTest extends TestCase
         );
     }
 
+    public function testCleanup(): void
+    {
+        $this->expectNotToPerformAssertions();
+        $enricher = new NewsDocumentEnricher();
+        $enricher->cleanup();
+    }
+
     private function enrichDocument(
         array $data
     ): IndexSchema2xDocument {
