@@ -7,3 +7,4 @@
 !var/log/.gitkeep
 /tools
 .phpactor.json
+*.swp
