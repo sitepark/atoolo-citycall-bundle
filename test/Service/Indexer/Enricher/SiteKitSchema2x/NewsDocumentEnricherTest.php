@@ -11,8 +11,6 @@ use Atoolo\Search\Service\Indexer\IndexSchema2xDocument;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-// phpcs:ignore
-
 #[CoversClass(NewsDocumentEnricher::class)]
 class NewsDocumentEnricherTest extends TestCase
 {
