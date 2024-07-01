@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Atoolo\CityCall\Test\Service\Indexer\Enricher\SiteKitSchema2x;
 
-// phpcs:ignore
-use Atoolo\CityCall\Service\Indexer\Enricher\SiteKitSchema2x\NewsDocumentEnricher;
+use Atoolo\CityCall\Service\Indexer\Enricher\{
+    SiteKitSchema2x\NewsDocumentEnricher
+};
 use Atoolo\CityCall\Test\TestResourceFactory;
 use Atoolo\Search\Service\Indexer\IndexSchema2xDocument;
 use PHPUnit\Framework\Attributes\CoversClass;
