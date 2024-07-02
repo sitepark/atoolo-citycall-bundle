@@ -25,8 +25,8 @@ class AtooloCityCallBundle extends Bundle
             new LoaderResolver(
                 [
                     new YamlFileLoader($container, new FileLocator($configDir)),
-                ]
-            )
+                ],
+            ),
         );
 
         $loader->load('services.yaml');
