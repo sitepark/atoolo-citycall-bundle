@@ -20,8 +20,8 @@ class NewsDocumentEnricherTest extends TestCase
         $doc = $this->enrichDocument([
             'objectType' => 'citycall-news',
             'metadata' => [
-               'isAdHocActive' => true
-            ]
+                'isAdHocActive' => true,
+            ],
         ]);
 
         /** @var array{sp_meta_string_leikanumber: bool} $fields */
@@ -29,7 +29,7 @@ class NewsDocumentEnricherTest extends TestCase
 
         $this->assertTrue(
             $fields['sp_meta_bool_citycall_isadhoc'],
-            'unexpected isadhoc'
+            'unexpected isadhoc',
         );
     }
 
@@ -38,8 +38,8 @@ class NewsDocumentEnricherTest extends TestCase
         $doc = $this->enrichDocument([
             'objectType' => 'otherType',
             'metadata' => [
-                'isAdHocActive' => true
-            ]
+                'isAdHocActive' => true,
+            ],
         ]);
 
         /** @var array{sp_meta_string_leikanumber: bool} $fields */
@@ -47,7 +47,7 @@ class NewsDocumentEnricherTest extends TestCase
 
         $this->assertEmpty(
             $fields,
-            'document should be empty'
+            'document should be empty',
         );
     }
 
@@ -59,7 +59,7 @@ class NewsDocumentEnricherTest extends TestCase
     }
 
     private function enrichDocument(
-        array $data
+        array $data,
     ): IndexSchema2xDocument {
         $enricher = new NewsDocumentEnricher();
         $doc = new IndexSchema2xDocument();

@@ -15,9 +15,7 @@ use Atoolo\Search\Service\Indexer\IndexSchema2xDocument;
  */
 class NewsDocumentEnricher implements DocumentEnricher
 {
-    public function cleanup(): void
-    {
-    }
+    public function cleanup(): void {}
 
     /**
      * @throws DocumentEnrichingException
@@ -25,7 +23,7 @@ class NewsDocumentEnricher implements DocumentEnricher
     public function enrichDocument(
         Resource $resource,
         IndexDocument $doc,
-        string $processId
+        string $processId,
     ): IndexSchema2xDocument {
 
         if ($resource->objectType !== 'citycall-news') {
@@ -42,11 +40,11 @@ class NewsDocumentEnricher implements DocumentEnricher
      */
     private function enrichDocumentForNews(
         Resource $resource,
-        IndexDocument $doc
+        IndexDocument $doc,
     ): IndexDocument {
 
         $isAdHocActive = $resource->data->getBool(
-            'metadata.isAdHocActive'
+            'metadata.isAdHocActive',
         );
         if ($isAdHocActive) {
             $doc->setMetaBool('citycall_isadhoc', true);
