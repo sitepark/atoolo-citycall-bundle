@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Atoolo\CityCall\Test\Service\Indexer\Enricher\SiteKitSchema2x;
 
+use Atoolo\Resource\Resource;
 use Atoolo\CityCall\Service\Indexer\Enricher\{
     SiteKitSchema2x\NewsDocumentEnricher
 };
-use Atoolo\CityCall\Test\TestResourceFactory;
 use Atoolo\Search\Service\Indexer\IndexSchema2xDocument;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -64,7 +64,7 @@ class NewsDocumentEnricherTest extends TestCase
         $enricher = new NewsDocumentEnricher();
         $doc = new IndexSchema2xDocument();
 
-        $resource = TestResourceFactory::create($data);
+        $resource = Resource::create($data);
 
         return $enricher->enrichDocument($resource, $doc, '');
     }
